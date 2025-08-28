@@ -1,0 +1,46 @@
+services:
+  web:
+    platform: linux/arm64
+    container_name: ${ODOO_CONTAINER_NAME}
+    build:
+      context: .
+      dockerfile: Dockerfile-odoo18
+    depends_on:
+      - db
+    ports:
+      - "${ODOO_PORT}:8069"
+      - "${DEBUGPY_PORT}:8888"
+      - "8072:8072"  # Puerto para longpolling
+    volumes:
+      - ./conf:/etc/odoo
+      - odoo-web-data:/var/lib/odoo
+      - ./extra-addons:/var/lib/odoo/custom_addons
+      - ./logs:/var/log/odoo
+      - ./filestore:/var/lib/odoo/filestore
+    user: "odoo"
+    environment:
+      - ADDONS_PATH=/opt/odoo/addons,/var/lib/odoo/custom_addons
+      - PYTHONPATH=/opt/odoo
+    command: >
+      python3 odoo-bin -c /etc/odoo/odoo.conf --log-level=debug --dev=all
+    restart: unless-stopped
+    
+  db:
+    container_name: ${PG_CONTAINER_NAME}
+    image: postgres:${PG_VERSION}
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=${PG_PASSWORD}
+      - POSTGRES_USER=${PG_USER}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    ports:
+      - ${PG_PORT}:5432
+    volumes:
+      - pgdb-data:/var/lib/postgresql/data/pgdata
+      - ./postgresql.conf:/etc/postgresql/postgresql.conf
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf
+    restart: unless-stopped
+
+volumes:
+  odoo-web-data:
+  pgdb-data:

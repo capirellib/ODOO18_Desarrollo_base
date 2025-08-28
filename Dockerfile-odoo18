@@ -1,0 +1,79 @@
+FROM python:3.11-slim
+
+USER root
+
+# Instalar dependencias del sistema necesarias para Odoo 18
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libxml2-dev \
+    libxslt1-dev \
+    libevent-dev \
+    libsasl2-dev \
+    libldap2-dev \
+    libpq-dev \
+    libjpeg-dev \
+    zlib1g-dev \
+    libfreetype6-dev \
+    liblcms2-dev \
+    libwebp-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libxcb1-dev \
+    pkg-config \
+    wget \
+    curl \
+    node-less \
+    python3-dev \
+    libssl-dev \
+    git \
+    sassc \
+    postgresql-client \
+    gnupg2 \
+    ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# Clonar Odoo 18 desde GitHub
+RUN git clone --depth 1 --branch 18.0 https://github.com/odoo/odoo.git /opt/odoo
+
+# Instalar dependencias Python para Odoo 18
+WORKDIR /opt/odoo
+
+# Actualizar pip y instalar dependencias básicas
+RUN pip3 install --upgrade pip setuptools wheel
+
+# Instalar dependencias desde requirements.txt de Odoo 18
+RUN pip3 install -r requirements.txt
+
+# Instalar dependencias adicionales para desarrollo
+RUN pip3 install \
+    debugpy \
+    pydevd-odoo \
+    autopep8 \
+    flake8 \
+    black \
+    isort \
+    pylint \
+    watchdog
+
+# Crear usuario odoo y directorios necesarios
+RUN useradd --create-home --home-dir /home/odoo --shell /bin/bash odoo \
+    && mkdir -p /var/lib/odoo \
+    && mkdir -p /var/log/odoo \
+    && mkdir -p /etc/odoo \
+    && chown -R odoo:odoo /var/lib/odoo /var/log/odoo /etc/odoo
+
+# Cambiar permisos de Odoo para el usuario odoo
+RUN chown -R odoo:odoo /opt/odoo
+
+# Copiar archivo de configuración
+COPY conf/odoo.conf /etc/odoo/odoo.conf
+RUN chmod 644 /etc/odoo/odoo.conf && chown odoo:odoo /etc/odoo/odoo.conf
+
+USER odoo
+
+WORKDIR /opt/odoo
+
+EXPOSE 8069 8072
+
+# Comando por defecto
+CMD ["python3", "odoo-bin", "-c", "/etc/odoo/odoo.conf"]

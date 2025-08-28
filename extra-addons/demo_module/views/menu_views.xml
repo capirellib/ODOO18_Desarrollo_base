@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Menú raíz -->
+    <menuitem id="demo_main_menu" name="Demo Module" sequence="100" web_icon="demo_module,static/description/icon.png"/>
+
+    <!-- Submenú -->
+    <menuitem id="demo_submenu" name="Gestión" parent="demo_main_menu" sequence="10"/>
+
+    <!-- Elemento de menú para la acción -->
+    <menuitem id="demo_model_menu" name="Registros Demo" parent="demo_submenu" action="demo_model_action" sequence="10"/>
+
+</odoo>

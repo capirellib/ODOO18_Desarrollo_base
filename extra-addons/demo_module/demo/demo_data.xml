@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- Datos de demostración para demo.model -->
+        <record id="demo_record_1" model="demo.model">
+            <field name="name">Registro de Prueba 1</field>
+            <field name="description">Este es el primer registro de demostración creado para probar el módulo.</field>
+            <field name="priority">high</field>
+            <field name="value">100.50</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="demo_record_2" model="demo.model">
+            <field name="name">Registro de Prueba 2</field>
+            <field name="description">Segundo registro de demostración con prioridad media.</field>
+            <field name="priority">medium</field>
+            <field name="value">75.25</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="demo_record_3" model="demo.model">
+            <field name="name">Registro de Prueba 3</field>
+            <field name="description">Tercer registro con prioridad baja para testing.</field>
+            <field name="priority">low</field>
+            <field name="value">25.00</field>
+            <field name="active">False</field>
+        </record>
+
+        <record id="demo_record_4" model="demo.model">
+            <field name="name">Registro Especial</field>
+            <field name="description">Registro especial para demostrar diferentes funcionalidades del sistema.</field>
+            <field name="priority">high</field>
+            <field name="value">250.00</field>
+            <field name="active">True</field>
+        </record>
+
+        <record id="demo_record_5" model="demo.model">
+            <field name="name">Registro Inactivo</field>
+            <field name="description">Este registro está marcado como inactivo para probar filtros.</field>
+            <field name="priority">medium</field>
+            <field name="value">50.75</field>
+            <field name="active">False</field>
+        </record>
+
+    </data>
+</odoo>

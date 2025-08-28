@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista de Lista -->
+    <record id="demo_model_tree_view" model="ir.ui.view">
+        <field name="name">demo.model.tree</field>
+        <field name="model">demo.model</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="priority"/>
+                <field name="value"/>
+                <field name="date_created"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de Formulario -->
+    <record id="demo_model_form_view" model="ir.ui.view">
+        <field name="name">demo.model.form</field>
+        <field name="model">demo.model</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="action_activate" type="object" string="Activar" class="btn-primary" invisible="active"/>
+                    <button name="action_deactivate" type="object" string="Desactivar" class="btn-secondary" invisible="not active"/>
+                    <field name="active" widget="boolean_toggle"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="priority"/>
+                        </group>
+                        <group>
+                            <field name="value"/>
+                            <field name="date_created"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Descripción">
+                            <field name="description" placeholder="Ingrese una descripción detallada..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista de Búsqueda -->
+    <record id="demo_model_search_view" model="ir.ui.view">
+        <field name="name">demo.model.search</field>
+        <field name="model">demo.model</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="description"/>
+                <filter string="Activos" name="active" domain="[('active', '=', True)]"/>
+                <filter string="Inactivos" name="inactive" domain="[('active', '=', False)]"/>
+                <separator/>
+                <filter string="Prioridad Alta" name="high_priority" domain="[('priority', '=', 'high')]"/>
+                <filter string="Prioridad Media" name="medium_priority" domain="[('priority', '=', 'medium')]"/>
+                <filter string="Prioridad Baja" name="low_priority" domain="[('priority', '=', 'low')]"/>
+                <group expand="0" string="Agrupar por">
+                    <filter string="Prioridad" name="group_priority" context="{'group_by': 'priority'}"/>
+                    <filter string="Estado" name="group_active" context="{'group_by': 'active'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <!-- Acción de Ventana -->
+    <record id="demo_model_action" model="ir.actions.act_window">
+        <field name="name">Registros Demo</field>
+        <field name="res_model">demo.model</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_active': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crear el primer registro de demostración
+            </p>
+            <p>
+                Haga clic en "Nuevo" para crear un nuevo registro de demostración.
+            </p>
+        </field>
+    </record>
+
+</odoo>

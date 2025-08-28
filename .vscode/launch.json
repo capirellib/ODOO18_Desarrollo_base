@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Odoo 18 Debug",
+            "type": "python",
+            "request": "attach",
+            "host": "localhost",
+            "port": 8888,
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/extra-addons",
+                    "remoteRoot": "/var/lib/odoo/custom_addons"
+                },
+                {
+                    "localRoot": "${workspaceFolder}/odoo18-source",
+                    "remoteRoot": "/opt/odoo"
+                }
+            ],
+            "justMyCode": false,
+            "django": false,
+            "redirectOutput": true,
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Odoo 18 Tests Debug",
+            "type": "python",
+            "request": "attach",
+            "host": "localhost",
+            "port": 8888,
+            "pathMappings": [
+                {
+                    "localRoot": "${workspaceFolder}/extra-addons",
+                    "remoteRoot": "/var/lib/odoo/custom_addons"
+                }
+            ],
+            "justMyCode": false,
+            "django": false,
+            "redirectOutput": true,
+            "console": "integratedTerminal"
+        }
+    ]
+}

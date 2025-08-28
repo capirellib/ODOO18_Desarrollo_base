@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "ms-python.python",
+        "ms-python.pylint",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "ms-python.debugpy",
+        "trinhanhngoc.vscode-odoo",
+        "mjavint.mjavint-odoo-snippets",
+        "redhat.vscode-xml",
+        "ms-vscode.vscode-json",
+        "ms-python.pylance",
+        "ms-vscode.docker",
+        "ms-azuretools.vscode-docker",
+        "gruntfuggly.todo-tree",
+        "donjayamanne.githistory",
+        "eamodio.gitlens",
+        "formulahendry.auto-rename-tag",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode"
+    ]
+}

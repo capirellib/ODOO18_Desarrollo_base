@@ -1,0 +1,149 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Odoo: Build Containers",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["build"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Start Services",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["up"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Start Debug Mode",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["debug"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Stop Services",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["down"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: View Logs",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["logs"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Install Module",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["install", "${input:moduleName}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Update Module",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["update", "${input:moduleName}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Scaffold Module",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["scaffold", "${input:newModuleName}"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Run Tests",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["test", "${input:moduleName}"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Odoo: Clean Volumes",
+            "type": "shell",
+            "command": "./odoo-dev.sh",
+            "args": ["clean"],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "moduleName",
+            "description": "Nombre del módulo",
+            "default": "",
+            "type": "promptString"
+        },
+        {
+            "id": "newModuleName",
+            "description": "Nombre del nuevo módulo",
+            "default": "",
+            "type": "promptString"
+        }
+    ]
+}

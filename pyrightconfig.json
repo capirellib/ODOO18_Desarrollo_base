@@ -1,0 +1,23 @@
+{
+  "include": ["extra-addons/**", "odoo18-source/**"],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "logs/**",
+    "filestore/**",
+    "backups/**",
+    "odoo18-source/.git/**"
+  ],
+  "extraPaths": ["./extra-addons", "./odoo18-source"],
+  "pythonVersion": "3.11",
+  "typeCheckingMode": "basic",
+  "useLibraryCodeForTypes": true,
+  "reportMissingImports": false,
+  "reportMissingTypeStubs": false,
+  "reportGeneralTypeIssues": false,
+  "reportOptionalMemberAccess": false,
+  "reportOptionalSubscript": false,
+  "reportPrivateImportUsage": false,
+  "reportUnboundVariable": false,
+  "reportUndefinedVariable": false
+}
