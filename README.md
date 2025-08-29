@@ -1,24 +1,45 @@
 # Base Desarrollo Docker ODOO18
 
-Este proyecto proporciona un entorno de desarrollo completo para Odoo 18 usando Docker y Docker Compose.
+## 🚫 **IMPORTANTE: REPOSITORIO PROTEGIDO**
 
-## 🏗️ Estado del Proyecto
+**❌ CLONACIÓN GIT DESHABILITADA**
 
-**✅ ESTRUCTURA BASE CONFIGURADA**
+Este repositorio está configurado para **NO permitir clonación Git**. Solo es accesible mediante descarga ZIP.
 
-El proyecto está listo para ser utilizado. Solo necesitas ejecutar la instalación para comenzar a desarrollar.
+## 📦 **DESCARGA RECOMENDADA (ÚNICA FORMA)**
 
-## 📦 Instalación
+**✅ SOLO DESCARGA ZIP PERMITIDA**
 
-1. **Descargar el proyecto como ZIP**
-2. **Extraer en tu directorio de desarrollo**
-3. **Ejecutar instalación automática:**
+### Pasos para obtener el proyecto:
 
-```bash
-cd base_desarrollo_docker_ODOO18
-chmod +x install.sh
-./install.sh
-```
+1. **📥 Descarga ZIP:**
+
+   - Ve a la página del repositorio en GitHub
+   - Clic en el botón verde **"Code"**
+   - Selecciona **"Download ZIP"**
+
+2. **📂 Extrae el archivo:**
+
+   ```bash
+   unzip base_desarrollo_docker_ODOO18.zip
+   cd base_desarrollo_docker_ODOO18
+   ```
+
+3. **🚀 Ejecuta la instalación:**
+   ```bash
+   chmod +x install.sh
+   ./install.sh
+   ```
+
+## ❌ **OPERACIONES BLOQUEADAS**
+
+Las siguientes operaciones Git están **PERMANENTEMENTE DESHABILITADAS**:
+
+- `git clone` ❌
+- `git pull` ❌
+- `git fetch` ❌
+- `git push` ❌
+- Cualquier acceso Git remoto ❌
 
 ## 🚀 Características
 
