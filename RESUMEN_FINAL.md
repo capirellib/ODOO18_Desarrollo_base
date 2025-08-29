@@ -3,12 +3,14 @@
 ## ✅ TRANSFORMACIÓN COMPLETADA
 
 ### 📦 **ESTADO ACTUAL:**
+
 - ✅ Proyecto migrado de Odoo 15 a **Odoo 18**
 - ✅ Estructura base limpia y optimizada
 - ✅ Entorno de desarrollo completo configurado
 - ✅ **Repositorio Git SEGURO** (5/5 medidas activas)
 
 ### 🔒 **SEGURIDAD IMPLEMENTADA:**
+
 - ✅ **Hooks Git**: Bloquean todas las operaciones remotas
 - ✅ **Sin remotes**: No hay configuraciones de repositorio remoto
 - ✅ **Documentación**: Avisos de seguridad en README.md
@@ -16,6 +18,7 @@
 - ✅ **Solo distribución ZIP**: Acceso únicamente por descarga
 
 ### 🐳 **TECNOLOGÍAS INCLUIDAS:**
+
 - **Odoo 18**: Última versión estable
 - **PostgreSQL 15**: Base de datos optimizada
 - **Python 3.11**: Runtime moderno
@@ -24,6 +27,7 @@
 - **Debugging**: Setup de debugpy incluido
 
 ### 📁 **ARCHIVOS PRINCIPALES:**
+
 - `docker-compose.yml`: Orquestación principal
 - `Dockerfile-odoo18`: Imagen personalizada de Odoo
 - `install.sh`: Script de instalación automática
@@ -38,6 +42,7 @@
 4. **Desarrollar**: Usar VS Code con configuración incluida
 
 ### ⚠️ **ADVERTENCIAS DE SEGURIDAD:**
+
 - **NO se puede clonar** vía Git
 - **NO tiene acceso remoto** configurado
 - **Solo distribución ZIP** autorizada

@@ -1,14 +1,27 @@
 # Base Desarrollo Docker ODOO18
 
-## 🚫 **IMPORTANTE: REPOSITORIO PROTEGIDO**
+## � **IMPORTANTE: REPOSITORIO CON CONTROL DE ACCESO SELECTIVO**
 
-**❌ CLONACIÓN GIT DESHABILITADA**
+**👑 ACCESO ADMINISTRADOR vs 👤 USUARIOS ESTÁNDAR**
 
-Este repositorio está configurado para **NO permitir clonación Git**. Solo es accesible mediante descarga ZIP.
+Este repositorio implementa **control de acceso diferenciado**:
 
-## 📦 **DESCARGA RECOMENDADA (ÚNICA FORMA)**
+### 👑 **ADMINISTRADORES AUTORIZADOS:**
 
-**✅ SOLO DESCARGA ZIP PERMITIDA**
+- ✅ **Acceso Git completo** (clone, pull, push, fetch)
+- ✅ **Modificación del código**
+- ✅ **Sincronización de cambios**
+- ✅ **Control total del repositorio**
+
+**Usuarios administradores:** `mac`, `capirellib`, `admin`, `root`
+
+### � **USUARIOS ESTÁNDAR:**
+
+- ❌ **Git clonación BLOQUEADA**
+- ❌ **Operaciones Git remotas DENEGADAS**
+- ✅ **Solo descarga ZIP permitida**
+
+## 📦 **DESCARGA PARA USUARIOS ESTÁNDAR**
 
 ### Pasos para obtener el proyecto:
 
@@ -31,9 +44,9 @@ Este repositorio está configurado para **NO permitir clonación Git**. Solo es 
    ./install.sh
    ```
 
-## ❌ **OPERACIONES BLOQUEADAS**
+## ❌ **OPERACIONES BLOQUEADAS PARA USUARIOS ESTÁNDAR**
 
-Las siguientes operaciones Git están **PERMANENTEMENTE DESHABILITADAS**:
+Las siguientes operaciones Git están **BLOQUEADAS** para usuarios no administradores:
 
 - `git clone` ❌
 - `git pull` ❌
